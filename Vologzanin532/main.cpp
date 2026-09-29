@@ -11,7 +11,7 @@ int main()
 	const int col = 4;
 
 	int first = 0, second = 0;
-
+	
 	int arr[row][col];
 
 	for (int i = 0; i < row; i++)
