@@ -1,5 +1,6 @@
 #include <iostream>
 #include <Windows.h>
+#include <ctime>
 
 void DynamicMemoryAllocation(int* &arr, int size);
 
@@ -169,16 +170,14 @@ void DeleteElement(int*& arr, int& size, int index)
 
 	int* temp = new int[size - 1];
 
-	for (size_t i = 0, j = 0; i < size; i++)
+	for (int i = 0, j = 0; i < size; i++)
 	{
-		if (i == index)
+		if (i != index)
 		{
-			continue;
+			temp[j] = arr[i];
+			j++;
 		}
-
-		temp[j++] = arr[i];
 	}
-
 
 	delete[] arr;
 	arr = temp;
